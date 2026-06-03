@@ -1,0 +1,82 @@
+{
+  "title": {
+    "en": "Compare | The first value !{{matches|does not match}} the second value",
+    "nl": "Vergelijken | De eerste waarde !{{komt overeen met|komt niet overeen met}} de tweede waarde"
+  },
+  "highlight": true,
+  "titleFormatted": {
+    "en": "[[left]] [[operator]] [[right]] is !{{true|false}}",
+    "nl": "[[left]] [[operator]] [[right]] is !{{waar|onwaar}}"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "left",
+      "title": {
+        "en": "First value",
+        "nl": "Eerste waarde"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "operator",
+      "title": {
+        "en": "Comparison",
+        "nl": "Vergelijking"
+      },
+      "values": [
+        {
+          "id": "eq",
+          "label": {
+            "en": "= Equal",
+            "nl": "= Gelijk aan"
+          }
+        },
+        {
+          "id": "ne",
+          "label": {
+            "en": "!= Not equal",
+            "nl": "!= Ongelijk aan"
+          }
+        },
+        {
+          "id": "gt",
+          "label": {
+            "en": "> Greater than",
+            "nl": "> Groter dan"
+          }
+        },
+        {
+          "id": "gte",
+          "label": {
+            "en": ">= Greater or equal",
+            "nl": ">= Groter of gelijk"
+          }
+        },
+        {
+          "id": "lt",
+          "label": {
+            "en": "< Less than",
+            "nl": "< Kleiner dan"
+          }
+        },
+        {
+          "id": "lte",
+          "label": {
+            "en": "<= Less or equal",
+            "nl": "<= Kleiner of gelijk"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "right",
+      "title": {
+        "en": "Second value",
+        "nl": "Tweede waarde"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

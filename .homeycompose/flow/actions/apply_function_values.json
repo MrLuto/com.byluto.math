@@ -1,0 +1,204 @@
+{
+  "title": {
+    "en": "Values | Apply function",
+    "nl": "Waardes | Pas functie toe"
+  },
+  "titleFormatted": {
+    "en": "Apply [[function]] to [[values]]",
+    "nl": "Pas [[function]] toe op [[values]]"
+  },
+  "hint": {
+    "en": "Enter multiple values in one field, separated by commas. You can also drop number tags into the field.",
+    "nl": "Voer meerdere waardes in in één veld, gescheiden door komma's. Je kunt ook getaltags in het veld droppen."
+  },
+  "tokens": [
+    {
+      "name": "result",
+      "type": "number",
+      "title": {
+        "en": "Result",
+        "nl": "Resultaat"
+      },
+      "example": 42
+    }
+  ],
+  "args": [
+    {
+      "type": "dropdown",
+      "name": "function",
+      "title": {
+        "en": "Function",
+        "nl": "Functie"
+      },
+      "values": [
+        {
+          "id": "abs",
+          "label": {
+            "en": "abs",
+            "nl": "abs"
+          }
+        },
+        {
+          "id": "round",
+          "label": {
+            "en": "round",
+            "nl": "round"
+          }
+        },
+        {
+          "id": "floor",
+          "label": {
+            "en": "floor",
+            "nl": "floor"
+          }
+        },
+        {
+          "id": "ceil",
+          "label": {
+            "en": "ceil",
+            "nl": "ceil"
+          }
+        },
+        {
+          "id": "sqrt",
+          "label": {
+            "en": "sqrt",
+            "nl": "sqrt"
+          }
+        },
+        {
+          "id": "sin",
+          "label": {
+            "en": "sin",
+            "nl": "sin"
+          }
+        },
+        {
+          "id": "cos",
+          "label": {
+            "en": "cos",
+            "nl": "cos"
+          }
+        },
+        {
+          "id": "tan",
+          "label": {
+            "en": "tan",
+            "nl": "tan"
+          }
+        },
+        {
+          "id": "asin",
+          "label": {
+            "en": "asin",
+            "nl": "asin"
+          }
+        },
+        {
+          "id": "acos",
+          "label": {
+            "en": "acos",
+            "nl": "acos"
+          }
+        },
+        {
+          "id": "atan",
+          "label": {
+            "en": "atan",
+            "nl": "atan"
+          }
+        },
+        {
+          "id": "exp",
+          "label": {
+            "en": "exp",
+            "nl": "exp"
+          }
+        },
+        {
+          "id": "log",
+          "label": {
+            "en": "log",
+            "nl": "log"
+          }
+        },
+        {
+          "id": "log10",
+          "label": {
+            "en": "log10",
+            "nl": "log10"
+          }
+        },
+        {
+          "id": "min",
+          "label": {
+            "en": "min",
+            "nl": "min"
+          }
+        },
+        {
+          "id": "max",
+          "label": {
+            "en": "max",
+            "nl": "max"
+          }
+        },
+        {
+          "id": "clamp",
+          "label": {
+            "en": "clamp",
+            "nl": "clamp"
+          }
+        },
+        {
+          "id": "average",
+          "label": {
+            "en": "average",
+            "nl": "average"
+          }
+        },
+        {
+          "id": "percentage",
+          "label": {
+            "en": "percentage",
+            "nl": "percentage"
+          }
+        },
+        {
+          "id": "random",
+          "label": {
+            "en": "random",
+            "nl": "random"
+          }
+        },
+        {
+          "id": "randomInt",
+          "label": {
+            "en": "randomInt",
+            "nl": "randomInt"
+          }
+        },
+        {
+          "id": "mapRange",
+          "label": {
+            "en": "mapRange",
+            "nl": "mapRange"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "values",
+      "title": {
+        "en": "Values",
+        "nl": "Waardes"
+      },
+      "placeholder": {
+        "en": "12, 8 or 12, [[tag]], 3",
+        "nl": "12, 8 of 12, [[tag]], 3"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

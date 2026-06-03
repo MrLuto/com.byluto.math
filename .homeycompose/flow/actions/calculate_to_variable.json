@@ -1,0 +1,94 @@
+{
+  "title": {
+    "en": "Calculate and store in a variable",
+    "nl": "Bereken en sla op in een variabele"
+  },
+  "deprecated": true,
+  "titleFormatted": {
+    "en": "Store [[left]] [[operator]] [[right]] in [[variable]]",
+    "nl": "Sla [[left]] [[operator]] [[right]] op in [[variable]]"
+  },
+  "hint": {
+    "en": "Calculate with two values and store the numeric result in a Homey Logic variable.",
+    "nl": "Bereken met twee waarden en sla het numerieke resultaat op in een Homey Logic-variabele."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    },
+    {
+      "type": "text",
+      "name": "left",
+      "title": {
+        "en": "First value",
+        "nl": "Eerste waarde"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "operator",
+      "title": {
+        "en": "Operator",
+        "nl": "Operator"
+      },
+      "values": [
+        {
+          "id": "add",
+          "label": {
+            "en": "+ Add",
+            "nl": "+ Optellen"
+          }
+        },
+        {
+          "id": "subtract",
+          "label": {
+            "en": "- Subtract",
+            "nl": "- Aftrekken"
+          }
+        },
+        {
+          "id": "multiply",
+          "label": {
+            "en": "* Multiply",
+            "nl": "* Vermenigvuldigen"
+          }
+        },
+        {
+          "id": "divide",
+          "label": {
+            "en": "/ Divide",
+            "nl": "/ Delen"
+          }
+        },
+        {
+          "id": "modulo",
+          "label": {
+            "en": "% Modulo",
+            "nl": "% Modulo"
+          }
+        },
+        {
+          "id": "power",
+          "label": {
+            "en": "^ Power",
+            "nl": "^ Macht"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "right",
+      "title": {
+        "en": "Second value",
+        "nl": "Tweede waarde"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

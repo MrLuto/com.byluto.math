@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Text | The value is !{{empty|not empty}}",
+    "nl": "Tekst | De waarde is !{{leeg|niet leeg}}"
+  },
+  "titleFormatted": {
+    "en": "[[value]] is !{{empty|not empty}}",
+    "nl": "[[value]] is !{{leeg|niet leeg}}"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "nl": "Waarde"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

@@ -1,0 +1,97 @@
+{
+  "title": {
+    "en": "Units | Convert and store",
+    "nl": "Eenheden | Converteer en sla op"
+  },
+  "deprecated": true,
+  "titleFormatted": {
+    "en": "Convert [[value]] [[from_unit]] to [[to_unit]] and store in [[variable]]",
+    "nl": "Converteer [[value]] [[from_unit]] naar [[to_unit]] en sla op in [[variable]]"
+  },
+  "hint": {
+    "en": "Convert between units like km/h and mph, or Celsius and Fahrenheit, and store the numeric result.",
+    "nl": "Converteer tussen eenheden zoals km/h en mph, of Celsius en Fahrenheit, en sla het numerieke resultaat op."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "nl": "Waarde"
+      },
+      "placeholder": {
+        "en": "100 or 90 km/h",
+        "nl": "100 of 90 km/h"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "from_unit",
+      "title": {
+        "en": "From unit",
+        "nl": "Van eenheid"
+      },
+      "values": [
+        { "id": "auto", "label": { "en": "Automatic / In value", "nl": "Automatisch / In waarde" } },
+        { "id": "mm", "label": { "en": "mm - millimeter", "nl": "mm - millimeter" } },
+        { "id": "cm", "label": { "en": "cm - centimeter", "nl": "cm - centimeter" } },
+        { "id": "m", "label": { "en": "m - meter", "nl": "m - meter" } },
+        { "id": "km", "label": { "en": "km - kilometer", "nl": "km - kilometer" } },
+        { "id": "in", "label": { "en": "in - inch", "nl": "in - inch" } },
+        { "id": "ft", "label": { "en": "ft - foot", "nl": "ft - voet" } },
+        { "id": "yd", "label": { "en": "yd - yard", "nl": "yd - yard" } },
+        { "id": "mi", "label": { "en": "mi - mile", "nl": "mi - mijl" } },
+        { "id": "mg", "label": { "en": "mg - milligram", "nl": "mg - milligram" } },
+        { "id": "g", "label": { "en": "g - gram", "nl": "g - gram" } },
+        { "id": "kg", "label": { "en": "kg - kilogram", "nl": "kg - kilogram" } },
+        { "id": "oz", "label": { "en": "oz - ounce", "nl": "oz - ounce" } },
+        { "id": "lb", "label": { "en": "lb - pound", "nl": "lb - pond" } },
+        { "id": "ml", "label": { "en": "ml - milliliter", "nl": "ml - milliliter" } },
+        { "id": "l", "label": { "en": "l - liter", "nl": "l - liter" } },
+        { "id": "m3", "label": { "en": "m3 - cubic meter", "nl": "m3 - kubieke meter" } },
+        { "id": "tsp", "label": { "en": "tsp - teaspoon", "nl": "tsp - theelepel" } },
+        { "id": "tbsp", "label": { "en": "tbsp - tablespoon", "nl": "tbsp - eetlepel" } },
+        { "id": "s", "label": { "en": "s - second", "nl": "s - seconde" } },
+        { "id": "min", "label": { "en": "min - minute", "nl": "min - minuut" } },
+        { "id": "h", "label": { "en": "h - hour", "nl": "h - uur" } },
+        { "id": "day", "label": { "en": "day - day", "nl": "day - dag" } },
+        { "id": "degC", "label": { "en": "degC - Celsius", "nl": "degC - Celsius" } },
+        { "id": "degF", "label": { "en": "degF - Fahrenheit", "nl": "degF - Fahrenheit" } },
+        { "id": "K", "label": { "en": "K - Kelvin", "nl": "K - Kelvin" } },
+        { "id": "m/s", "label": { "en": "m/s - meters per second", "nl": "m/s - meter per seconde" } },
+        { "id": "km/h", "label": { "en": "km/h - kilometers per hour", "nl": "km/h - kilometer per uur" } },
+        { "id": "mph", "label": { "en": "mph - miles per hour", "nl": "mph - mijl per uur" } },
+        { "id": "rad", "label": { "en": "rad - radian", "nl": "rad - radialen" } },
+        { "id": "deg", "label": { "en": "deg - degree", "nl": "deg - graden" } },
+        { "id": "W", "label": { "en": "W - watt", "nl": "W - watt" } },
+        { "id": "kW", "label": { "en": "kW - kilowatt", "nl": "kW - kilowatt" } },
+        { "id": "Wh", "label": { "en": "Wh - watt hour", "nl": "Wh - wattuur" } },
+        { "id": "kWh", "label": { "en": "kWh - kilowatt hour", "nl": "kWh - kilowattuur" } },
+        { "id": "Pa", "label": { "en": "Pa - pascal", "nl": "Pa - pascal" } },
+        { "id": "bar", "label": { "en": "bar - bar", "nl": "bar - bar" } }
+      ]
+    },
+    {
+      "type": "autocomplete",
+      "name": "to_unit",
+      "title": {
+        "en": "To unit",
+        "nl": "Naar eenheid"
+      },
+      "placeholder": {
+        "en": "Pick a compatible unit",
+        "nl": "Kies een compatibele eenheid"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

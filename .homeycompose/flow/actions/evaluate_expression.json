@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "Values | Evaluate expression",
+    "nl": "Waardes | Evalueer expressie"
+  },
+  "titleFormatted": {
+    "en": "Evaluate [[expression]]",
+    "nl": "Evalueer [[expression]]"
+  },
+  "hint": {
+    "en": "Evaluate one expression and expose the numeric result as a value in Advanced Flow.",
+    "nl": "Evalueer een expressie en geef het numerieke resultaat als waarde terug in Advanced Flow."
+  },
+  "highlight": true,
+  "tokens": [
+    {
+      "name": "result",
+      "type": "number",
+      "title": {
+        "en": "Result",
+        "nl": "Resultaat"
+      },
+      "example": 3.14
+    }
+  ],
+  "args": [
+    {
+      "type": "text",
+      "name": "expression",
+      "title": {
+        "en": "Expression",
+        "nl": "Expressie"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

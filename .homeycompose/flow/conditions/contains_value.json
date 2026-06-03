@@ -1,0 +1,29 @@
+{
+  "title": {
+    "en": "Text | The text !{{contains|does not contain}} another value",
+    "nl": "Tekst | De tekst !{{bevat|bevat niet}} een andere waarde"
+  },
+  "titleFormatted": {
+    "en": "[[haystack]] !{{contains|does not contain}} [[needle]]",
+    "nl": "[[haystack]] !{{bevat|bevat niet}} [[needle]]"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "haystack",
+      "title": {
+        "en": "Full text",
+        "nl": "Volledige tekst"
+      }
+    },
+    {
+      "type": "text",
+      "name": "needle",
+      "title": {
+        "en": "Text to look for",
+        "nl": "Zoektekst"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

@@ -1,0 +1,1995 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.byluto.math",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Math",
+    "nl": "Math"
+  },
+  "description": {
+    "en": "Calculate, compare, convert units, and update Homey Logic variables from Flows.",
+    "nl": "Reken, vergelijk, converteer eenheden en werk Homey Logic-variabelen bij vanuit Flows."
+  },
+  "changelog": {
+    "en": "Initial release with math flow cards and developer debug logging.",
+    "nl": "Eerste release met reken-flowkaarten en ontwikkelaarsdebuglogging."
+  },
+  "category": [
+    "tools"
+  ],
+  "brandColor": "#0E7490",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "author": {
+    "name": "ByLuto",
+    "email": "development@byluto.nl"
+  },
+  "support": "mailto:development@byluto.nl",
+  "flow": {
+    "conditions": [
+      {
+        "title": {
+          "en": "Logic | Boolean logic is !{{true|false}}",
+          "nl": "Logica | Booleaanse logica is !{{waar|onwaar}}"
+        },
+        "titleFormatted": {
+          "en": "[[left]] [[operator]] [[right]] is !{{true|false}}",
+          "nl": "[[left]] [[operator]] [[right]] is !{{waar|onwaar}}"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "left",
+            "title": {
+              "en": "First boolean",
+              "nl": "Eerste boolean"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "operator",
+            "title": {
+              "en": "Operator",
+              "nl": "Operator"
+            },
+            "values": [
+              {
+                "id": "and",
+                "label": {
+                  "en": "AND - Both true",
+                  "nl": "AND - Beide waar"
+                }
+              },
+              {
+                "id": "or",
+                "label": {
+                  "en": "OR - One is true",
+                  "nl": "OR - Een is waar"
+                }
+              },
+              {
+                "id": "xor",
+                "label": {
+                  "en": "XOR - Only one true",
+                  "nl": "XOR - Slechts een waar"
+                }
+              },
+              {
+                "id": "not",
+                "label": {
+                  "en": "NOT - Invert",
+                  "nl": "NOT - Omdraaien"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "right",
+            "title": {
+              "en": "Second boolean",
+              "nl": "Tweede boolean"
+            },
+            "required": false
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "boolean_logic"
+      },
+      {
+        "title": {
+          "en": "Compare | The first value !{{matches|does not match}} the second value",
+          "nl": "Vergelijken | De eerste waarde !{{komt overeen met|komt niet overeen met}} de tweede waarde"
+        },
+        "highlight": true,
+        "titleFormatted": {
+          "en": "[[left]] [[operator]] [[right]] is !{{true|false}}",
+          "nl": "[[left]] [[operator]] [[right]] is !{{waar|onwaar}}"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "left",
+            "title": {
+              "en": "First value",
+              "nl": "Eerste waarde"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "operator",
+            "title": {
+              "en": "Comparison",
+              "nl": "Vergelijking"
+            },
+            "values": [
+              {
+                "id": "eq",
+                "label": {
+                  "en": "= Equal",
+                  "nl": "= Gelijk aan"
+                }
+              },
+              {
+                "id": "ne",
+                "label": {
+                  "en": "!= Not equal",
+                  "nl": "!= Ongelijk aan"
+                }
+              },
+              {
+                "id": "gt",
+                "label": {
+                  "en": "> Greater than",
+                  "nl": "> Groter dan"
+                }
+              },
+              {
+                "id": "gte",
+                "label": {
+                  "en": ">= Greater or equal",
+                  "nl": ">= Groter of gelijk"
+                }
+              },
+              {
+                "id": "lt",
+                "label": {
+                  "en": "< Less than",
+                  "nl": "< Kleiner dan"
+                }
+              },
+              {
+                "id": "lte",
+                "label": {
+                  "en": "<= Less or equal",
+                  "nl": "<= Kleiner of gelijk"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "right",
+            "title": {
+              "en": "Second value",
+              "nl": "Tweede waarde"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "compare_values"
+      },
+      {
+        "title": {
+          "en": "Text | The text !{{contains|does not contain}} another value",
+          "nl": "Tekst | De tekst !{{bevat|bevat niet}} een andere waarde"
+        },
+        "titleFormatted": {
+          "en": "[[haystack]] !{{contains|does not contain}} [[needle]]",
+          "nl": "[[haystack]] !{{bevat|bevat niet}} [[needle]]"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "haystack",
+            "title": {
+              "en": "Full text",
+              "nl": "Volledige tekst"
+            }
+          },
+          {
+            "type": "text",
+            "name": "needle",
+            "title": {
+              "en": "Text to look for",
+              "nl": "Zoektekst"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "contains_value"
+      },
+      {
+        "title": {
+          "en": "Logic | The expression is !{{true|false}}",
+          "nl": "Logica | De expressie is !{{waar|onwaar}}"
+        },
+        "titleFormatted": {
+          "en": "[[expression]] is !{{true|false}}",
+          "nl": "[[expression]] is !{{waar|onwaar}}"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "expression",
+            "title": {
+              "en": "Expression",
+              "nl": "Expressie"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "expression_is_true"
+      },
+      {
+        "title": {
+          "en": "Text | The value is !{{empty|not empty}}",
+          "nl": "Tekst | De waarde is !{{leeg|niet leeg}}"
+        },
+        "titleFormatted": {
+          "en": "[[value]] is !{{empty|not empty}}",
+          "nl": "[[value]] is !{{leeg|niet leeg}}"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "is_empty"
+      }
+    ],
+    "actions": [
+      {
+        "deprecated": true,
+        "title": {
+          "en": "Values | Apply function",
+          "nl": "Waardes | Pas functie toe"
+        },
+        "titleFormatted": {
+          "en": "Apply [[function]]([[a]], [[b]], [[c]], [[d]], [[e]])",
+          "nl": "Pas [[function]]([[a]], [[b]], [[c]], [[d]], [[e]]) toe"
+        },
+        "hint": {
+          "en": "Apply a math function like round, sqrt, clamp, or random and expose the result as a value in Advanced Flow.",
+          "nl": "Pas een wiskundige functie toe zoals round, sqrt, clamp of random en geef het resultaat als waarde terug in Advanced Flow."
+        },
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 42
+          }
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "function",
+            "title": {
+              "en": "Function",
+              "nl": "Functie"
+            },
+            "values": [
+              {
+                "id": "abs",
+                "label": {
+                  "en": "abs",
+                  "nl": "abs"
+                }
+              },
+              {
+                "id": "round",
+                "label": {
+                  "en": "round",
+                  "nl": "round"
+                }
+              },
+              {
+                "id": "floor",
+                "label": {
+                  "en": "floor",
+                  "nl": "floor"
+                }
+              },
+              {
+                "id": "ceil",
+                "label": {
+                  "en": "ceil",
+                  "nl": "ceil"
+                }
+              },
+              {
+                "id": "sqrt",
+                "label": {
+                  "en": "sqrt",
+                  "nl": "sqrt"
+                }
+              },
+              {
+                "id": "sin",
+                "label": {
+                  "en": "sin",
+                  "nl": "sin"
+                }
+              },
+              {
+                "id": "cos",
+                "label": {
+                  "en": "cos",
+                  "nl": "cos"
+                }
+              },
+              {
+                "id": "tan",
+                "label": {
+                  "en": "tan",
+                  "nl": "tan"
+                }
+              },
+              {
+                "id": "asin",
+                "label": {
+                  "en": "asin",
+                  "nl": "asin"
+                }
+              },
+              {
+                "id": "acos",
+                "label": {
+                  "en": "acos",
+                  "nl": "acos"
+                }
+              },
+              {
+                "id": "atan",
+                "label": {
+                  "en": "atan",
+                  "nl": "atan"
+                }
+              },
+              {
+                "id": "exp",
+                "label": {
+                  "en": "exp",
+                  "nl": "exp"
+                }
+              },
+              {
+                "id": "log",
+                "label": {
+                  "en": "log",
+                  "nl": "log"
+                }
+              },
+              {
+                "id": "log10",
+                "label": {
+                  "en": "log10",
+                  "nl": "log10"
+                }
+              },
+              {
+                "id": "min",
+                "label": {
+                  "en": "min",
+                  "nl": "min"
+                }
+              },
+              {
+                "id": "max",
+                "label": {
+                  "en": "max",
+                  "nl": "max"
+                }
+              },
+              {
+                "id": "clamp",
+                "label": {
+                  "en": "clamp",
+                  "nl": "clamp"
+                }
+              },
+              {
+                "id": "average",
+                "label": {
+                  "en": "average",
+                  "nl": "average"
+                }
+              },
+              {
+                "id": "percentage",
+                "label": {
+                  "en": "percentage",
+                  "nl": "percentage"
+                }
+              },
+              {
+                "id": "random",
+                "label": {
+                  "en": "random",
+                  "nl": "random"
+                }
+              },
+              {
+                "id": "randomInt",
+                "label": {
+                  "en": "randomInt",
+                  "nl": "randomInt"
+                }
+              },
+              {
+                "id": "mapRange",
+                "label": {
+                  "en": "mapRange",
+                  "nl": "mapRange"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "a",
+            "title": {
+              "en": "A",
+              "nl": "A"
+            }
+          },
+          {
+            "type": "text",
+            "name": "b",
+            "title": {
+              "en": "B",
+              "nl": "B"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "c",
+            "title": {
+              "en": "C",
+              "nl": "C"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "d",
+            "title": {
+              "en": "D",
+              "nl": "D"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "e",
+            "title": {
+              "en": "E",
+              "nl": "E"
+            },
+            "required": false
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "apply_function"
+      },
+      {
+        "title": {
+          "en": "Values | Apply function",
+          "nl": "Waardes | Pas functie toe"
+        },
+        "titleFormatted": {
+          "en": "Apply [[function]] to [[values]]",
+          "nl": "Pas [[function]] toe op [[values]]"
+        },
+        "hint": {
+          "en": "Enter multiple values in one field, separated by commas. You can also drop number tags into the field.",
+          "nl": "Voer meerdere waardes in in één veld, gescheiden door komma's. Je kunt ook getaltags in het veld droppen."
+        },
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 42
+          }
+        ],
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "function",
+            "title": {
+              "en": "Function",
+              "nl": "Functie"
+            },
+            "values": [
+              {
+                "id": "abs",
+                "label": {
+                  "en": "abs",
+                  "nl": "abs"
+                }
+              },
+              {
+                "id": "round",
+                "label": {
+                  "en": "round",
+                  "nl": "round"
+                }
+              },
+              {
+                "id": "floor",
+                "label": {
+                  "en": "floor",
+                  "nl": "floor"
+                }
+              },
+              {
+                "id": "ceil",
+                "label": {
+                  "en": "ceil",
+                  "nl": "ceil"
+                }
+              },
+              {
+                "id": "sqrt",
+                "label": {
+                  "en": "sqrt",
+                  "nl": "sqrt"
+                }
+              },
+              {
+                "id": "sin",
+                "label": {
+                  "en": "sin",
+                  "nl": "sin"
+                }
+              },
+              {
+                "id": "cos",
+                "label": {
+                  "en": "cos",
+                  "nl": "cos"
+                }
+              },
+              {
+                "id": "tan",
+                "label": {
+                  "en": "tan",
+                  "nl": "tan"
+                }
+              },
+              {
+                "id": "asin",
+                "label": {
+                  "en": "asin",
+                  "nl": "asin"
+                }
+              },
+              {
+                "id": "acos",
+                "label": {
+                  "en": "acos",
+                  "nl": "acos"
+                }
+              },
+              {
+                "id": "atan",
+                "label": {
+                  "en": "atan",
+                  "nl": "atan"
+                }
+              },
+              {
+                "id": "exp",
+                "label": {
+                  "en": "exp",
+                  "nl": "exp"
+                }
+              },
+              {
+                "id": "log",
+                "label": {
+                  "en": "log",
+                  "nl": "log"
+                }
+              },
+              {
+                "id": "log10",
+                "label": {
+                  "en": "log10",
+                  "nl": "log10"
+                }
+              },
+              {
+                "id": "min",
+                "label": {
+                  "en": "min",
+                  "nl": "min"
+                }
+              },
+              {
+                "id": "max",
+                "label": {
+                  "en": "max",
+                  "nl": "max"
+                }
+              },
+              {
+                "id": "clamp",
+                "label": {
+                  "en": "clamp",
+                  "nl": "clamp"
+                }
+              },
+              {
+                "id": "average",
+                "label": {
+                  "en": "average",
+                  "nl": "average"
+                }
+              },
+              {
+                "id": "percentage",
+                "label": {
+                  "en": "percentage",
+                  "nl": "percentage"
+                }
+              },
+              {
+                "id": "random",
+                "label": {
+                  "en": "random",
+                  "nl": "random"
+                }
+              },
+              {
+                "id": "randomInt",
+                "label": {
+                  "en": "randomInt",
+                  "nl": "randomInt"
+                }
+              },
+              {
+                "id": "mapRange",
+                "label": {
+                  "en": "mapRange",
+                  "nl": "mapRange"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "values",
+            "title": {
+              "en": "Values",
+              "nl": "Waardes"
+            },
+            "placeholder": {
+              "en": "12, 8 or 12, [[tag]], 3",
+              "nl": "12, 8 of 12, [[tag]], 3"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "apply_function_values"
+      },
+      {
+        "title": {
+          "en": "Values | Calculate",
+          "nl": "Waardes | Bereken"
+        },
+        "titleFormatted": {
+          "en": "Calculate [[left]] [[operator]] [[right]]",
+          "nl": "Bereken [[left]] [[operator]] [[right]]"
+        },
+        "hint": {
+          "en": "Calculate a numeric result from two input values and expose it as a value in Advanced Flow.",
+          "nl": "Bereken een numeriek resultaat uit twee invoerwaardes en geef het als waarde terug in Advanced Flow."
+        },
+        "highlight": true,
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 12
+          }
+        ],
+        "args": [
+          {
+            "type": "text",
+            "name": "left",
+            "title": {
+              "en": "First value",
+              "nl": "Eerste waarde"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "operator",
+            "title": {
+              "en": "Operator",
+              "nl": "Operator"
+            },
+            "values": [
+              {
+                "id": "add",
+                "label": {
+                  "en": "+ Add",
+                  "nl": "+ Optellen"
+                }
+              },
+              {
+                "id": "subtract",
+                "label": {
+                  "en": "- Subtract",
+                  "nl": "- Aftrekken"
+                }
+              },
+              {
+                "id": "multiply",
+                "label": {
+                  "en": "* Multiply",
+                  "nl": "* Vermenigvuldigen"
+                }
+              },
+              {
+                "id": "divide",
+                "label": {
+                  "en": "/ Divide",
+                  "nl": "/ Delen"
+                }
+              },
+              {
+                "id": "modulo",
+                "label": {
+                  "en": "% Modulo",
+                  "nl": "% Modulo"
+                }
+              },
+              {
+                "id": "power",
+                "label": {
+                  "en": "^ Power",
+                  "nl": "^ Macht"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "right",
+            "title": {
+              "en": "Second value",
+              "nl": "Tweede waarde"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "calculate"
+      },
+      {
+        "title": {
+          "en": "Calculate and store in a variable",
+          "nl": "Bereken en sla op in een variabele"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "Store [[left]] [[operator]] [[right]] in [[variable]]",
+          "nl": "Sla [[left]] [[operator]] [[right]] op in [[variable]]"
+        },
+        "hint": {
+          "en": "Calculate with two values and store the numeric result in a Homey Logic variable.",
+          "nl": "Bereken met twee waarden en sla het numerieke resultaat op in een Homey Logic-variabele."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          },
+          {
+            "type": "text",
+            "name": "left",
+            "title": {
+              "en": "First value",
+              "nl": "Eerste waarde"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "operator",
+            "title": {
+              "en": "Operator",
+              "nl": "Operator"
+            },
+            "values": [
+              {
+                "id": "add",
+                "label": {
+                  "en": "+ Add",
+                  "nl": "+ Optellen"
+                }
+              },
+              {
+                "id": "subtract",
+                "label": {
+                  "en": "- Subtract",
+                  "nl": "- Aftrekken"
+                }
+              },
+              {
+                "id": "multiply",
+                "label": {
+                  "en": "* Multiply",
+                  "nl": "* Vermenigvuldigen"
+                }
+              },
+              {
+                "id": "divide",
+                "label": {
+                  "en": "/ Divide",
+                  "nl": "/ Delen"
+                }
+              },
+              {
+                "id": "modulo",
+                "label": {
+                  "en": "% Modulo",
+                  "nl": "% Modulo"
+                }
+              },
+              {
+                "id": "power",
+                "label": {
+                  "en": "^ Power",
+                  "nl": "^ Macht"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "right",
+            "title": {
+              "en": "Second value",
+              "nl": "Tweede waarde"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "calculate_to_variable"
+      },
+      {
+        "title": {
+          "en": "Values | Convert unit",
+          "nl": "Waardes | Converteer eenheid"
+        },
+        "titleFormatted": {
+          "en": "Convert [[value]] [[from_unit]] to [[to_unit]]",
+          "nl": "Converteer [[value]] [[from_unit]] naar [[to_unit]]"
+        },
+        "hint": {
+          "en": "Convert between units and expose the numeric result as a value in Advanced Flow.",
+          "nl": "Converteer tussen eenheden en geef het numerieke resultaat als waarde terug in Advanced Flow."
+        },
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 62.14
+          }
+        ],
+        "args": [
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "from_unit",
+            "title": {
+              "en": "From unit",
+              "nl": "Van eenheid"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Automatic / In value",
+                  "nl": "Automatisch / In waarde"
+                }
+              },
+              {
+                "id": "mm",
+                "label": {
+                  "en": "mm - millimeter",
+                  "nl": "mm - millimeter"
+                }
+              },
+              {
+                "id": "cm",
+                "label": {
+                  "en": "cm - centimeter",
+                  "nl": "cm - centimeter"
+                }
+              },
+              {
+                "id": "m",
+                "label": {
+                  "en": "m - meter",
+                  "nl": "m - meter"
+                }
+              },
+              {
+                "id": "km",
+                "label": {
+                  "en": "km - kilometer",
+                  "nl": "km - kilometer"
+                }
+              },
+              {
+                "id": "in",
+                "label": {
+                  "en": "in - inch",
+                  "nl": "in - inch"
+                }
+              },
+              {
+                "id": "ft",
+                "label": {
+                  "en": "ft - foot",
+                  "nl": "ft - voet"
+                }
+              },
+              {
+                "id": "yd",
+                "label": {
+                  "en": "yd - yard",
+                  "nl": "yd - yard"
+                }
+              },
+              {
+                "id": "mi",
+                "label": {
+                  "en": "mi - mile",
+                  "nl": "mi - mijl"
+                }
+              },
+              {
+                "id": "mg",
+                "label": {
+                  "en": "mg - milligram",
+                  "nl": "mg - milligram"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "g - gram",
+                  "nl": "g - gram"
+                }
+              },
+              {
+                "id": "kg",
+                "label": {
+                  "en": "kg - kilogram",
+                  "nl": "kg - kilogram"
+                }
+              },
+              {
+                "id": "oz",
+                "label": {
+                  "en": "oz - ounce",
+                  "nl": "oz - ounce"
+                }
+              },
+              {
+                "id": "lb",
+                "label": {
+                  "en": "lb - pound",
+                  "nl": "lb - pond"
+                }
+              },
+              {
+                "id": "ml",
+                "label": {
+                  "en": "ml - milliliter",
+                  "nl": "ml - milliliter"
+                }
+              },
+              {
+                "id": "l",
+                "label": {
+                  "en": "l - liter",
+                  "nl": "l - liter"
+                }
+              },
+              {
+                "id": "m3",
+                "label": {
+                  "en": "m3 - cubic meter",
+                  "nl": "m3 - kubieke meter"
+                }
+              },
+              {
+                "id": "tsp",
+                "label": {
+                  "en": "tsp - teaspoon",
+                  "nl": "tsp - theelepel"
+                }
+              },
+              {
+                "id": "tbsp",
+                "label": {
+                  "en": "tbsp - tablespoon",
+                  "nl": "tbsp - eetlepel"
+                }
+              },
+              {
+                "id": "s",
+                "label": {
+                  "en": "s - second",
+                  "nl": "s - seconde"
+                }
+              },
+              {
+                "id": "min",
+                "label": {
+                  "en": "min - minute",
+                  "nl": "min - minuut"
+                }
+              },
+              {
+                "id": "h",
+                "label": {
+                  "en": "h - hour",
+                  "nl": "h - uur"
+                }
+              },
+              {
+                "id": "day",
+                "label": {
+                  "en": "day - day",
+                  "nl": "day - dag"
+                }
+              },
+              {
+                "id": "degC",
+                "label": {
+                  "en": "degC - Celsius",
+                  "nl": "degC - Celsius"
+                }
+              },
+              {
+                "id": "degF",
+                "label": {
+                  "en": "degF - Fahrenheit",
+                  "nl": "degF - Fahrenheit"
+                }
+              },
+              {
+                "id": "K",
+                "label": {
+                  "en": "K - Kelvin",
+                  "nl": "K - Kelvin"
+                }
+              },
+              {
+                "id": "m/s",
+                "label": {
+                  "en": "m/s - meters per second",
+                  "nl": "m/s - meter per seconde"
+                }
+              },
+              {
+                "id": "km/h",
+                "label": {
+                  "en": "km/h - kilometers per hour",
+                  "nl": "km/h - kilometer per uur"
+                }
+              },
+              {
+                "id": "mph",
+                "label": {
+                  "en": "mph - miles per hour",
+                  "nl": "mph - mijl per uur"
+                }
+              },
+              {
+                "id": "rad",
+                "label": {
+                  "en": "rad - radian",
+                  "nl": "rad - radialen"
+                }
+              },
+              {
+                "id": "deg",
+                "label": {
+                  "en": "deg - degree",
+                  "nl": "deg - graden"
+                }
+              },
+              {
+                "id": "W",
+                "label": {
+                  "en": "W - watt",
+                  "nl": "W - watt"
+                }
+              },
+              {
+                "id": "kW",
+                "label": {
+                  "en": "kW - kilowatt",
+                  "nl": "kW - kilowatt"
+                }
+              },
+              {
+                "id": "Wh",
+                "label": {
+                  "en": "Wh - watt hour",
+                  "nl": "Wh - wattuur"
+                }
+              },
+              {
+                "id": "kWh",
+                "label": {
+                  "en": "kWh - kilowatt hour",
+                  "nl": "kWh - kilowattuur"
+                }
+              },
+              {
+                "id": "Pa",
+                "label": {
+                  "en": "Pa - pascal",
+                  "nl": "Pa - pascal"
+                }
+              },
+              {
+                "id": "bar",
+                "label": {
+                  "en": "bar - bar",
+                  "nl": "bar - bar"
+                }
+              }
+            ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "to_unit",
+            "title": {
+              "en": "To unit",
+              "nl": "Naar eenheid"
+            },
+            "placeholder": {
+              "en": "Pick a compatible unit",
+              "nl": "Kies een compatibele eenheid"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "convert_unit"
+      },
+      {
+        "title": {
+          "en": "Units | Convert and store",
+          "nl": "Eenheden | Converteer en sla op"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "Convert [[value]] [[from_unit]] to [[to_unit]] and store in [[variable]]",
+          "nl": "Converteer [[value]] [[from_unit]] naar [[to_unit]] en sla op in [[variable]]"
+        },
+        "hint": {
+          "en": "Convert between units like km/h and mph, or Celsius and Fahrenheit, and store the numeric result.",
+          "nl": "Converteer tussen eenheden zoals km/h en mph, of Celsius en Fahrenheit, en sla het numerieke resultaat op."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          },
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            },
+            "placeholder": {
+              "en": "100 or 90 km/h",
+              "nl": "100 of 90 km/h"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "from_unit",
+            "title": {
+              "en": "From unit",
+              "nl": "Van eenheid"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Automatic / In value",
+                  "nl": "Automatisch / In waarde"
+                }
+              },
+              {
+                "id": "mm",
+                "label": {
+                  "en": "mm - millimeter",
+                  "nl": "mm - millimeter"
+                }
+              },
+              {
+                "id": "cm",
+                "label": {
+                  "en": "cm - centimeter",
+                  "nl": "cm - centimeter"
+                }
+              },
+              {
+                "id": "m",
+                "label": {
+                  "en": "m - meter",
+                  "nl": "m - meter"
+                }
+              },
+              {
+                "id": "km",
+                "label": {
+                  "en": "km - kilometer",
+                  "nl": "km - kilometer"
+                }
+              },
+              {
+                "id": "in",
+                "label": {
+                  "en": "in - inch",
+                  "nl": "in - inch"
+                }
+              },
+              {
+                "id": "ft",
+                "label": {
+                  "en": "ft - foot",
+                  "nl": "ft - voet"
+                }
+              },
+              {
+                "id": "yd",
+                "label": {
+                  "en": "yd - yard",
+                  "nl": "yd - yard"
+                }
+              },
+              {
+                "id": "mi",
+                "label": {
+                  "en": "mi - mile",
+                  "nl": "mi - mijl"
+                }
+              },
+              {
+                "id": "mg",
+                "label": {
+                  "en": "mg - milligram",
+                  "nl": "mg - milligram"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "g - gram",
+                  "nl": "g - gram"
+                }
+              },
+              {
+                "id": "kg",
+                "label": {
+                  "en": "kg - kilogram",
+                  "nl": "kg - kilogram"
+                }
+              },
+              {
+                "id": "oz",
+                "label": {
+                  "en": "oz - ounce",
+                  "nl": "oz - ounce"
+                }
+              },
+              {
+                "id": "lb",
+                "label": {
+                  "en": "lb - pound",
+                  "nl": "lb - pond"
+                }
+              },
+              {
+                "id": "ml",
+                "label": {
+                  "en": "ml - milliliter",
+                  "nl": "ml - milliliter"
+                }
+              },
+              {
+                "id": "l",
+                "label": {
+                  "en": "l - liter",
+                  "nl": "l - liter"
+                }
+              },
+              {
+                "id": "m3",
+                "label": {
+                  "en": "m3 - cubic meter",
+                  "nl": "m3 - kubieke meter"
+                }
+              },
+              {
+                "id": "tsp",
+                "label": {
+                  "en": "tsp - teaspoon",
+                  "nl": "tsp - theelepel"
+                }
+              },
+              {
+                "id": "tbsp",
+                "label": {
+                  "en": "tbsp - tablespoon",
+                  "nl": "tbsp - eetlepel"
+                }
+              },
+              {
+                "id": "s",
+                "label": {
+                  "en": "s - second",
+                  "nl": "s - seconde"
+                }
+              },
+              {
+                "id": "min",
+                "label": {
+                  "en": "min - minute",
+                  "nl": "min - minuut"
+                }
+              },
+              {
+                "id": "h",
+                "label": {
+                  "en": "h - hour",
+                  "nl": "h - uur"
+                }
+              },
+              {
+                "id": "day",
+                "label": {
+                  "en": "day - day",
+                  "nl": "day - dag"
+                }
+              },
+              {
+                "id": "degC",
+                "label": {
+                  "en": "degC - Celsius",
+                  "nl": "degC - Celsius"
+                }
+              },
+              {
+                "id": "degF",
+                "label": {
+                  "en": "degF - Fahrenheit",
+                  "nl": "degF - Fahrenheit"
+                }
+              },
+              {
+                "id": "K",
+                "label": {
+                  "en": "K - Kelvin",
+                  "nl": "K - Kelvin"
+                }
+              },
+              {
+                "id": "m/s",
+                "label": {
+                  "en": "m/s - meters per second",
+                  "nl": "m/s - meter per seconde"
+                }
+              },
+              {
+                "id": "km/h",
+                "label": {
+                  "en": "km/h - kilometers per hour",
+                  "nl": "km/h - kilometer per uur"
+                }
+              },
+              {
+                "id": "mph",
+                "label": {
+                  "en": "mph - miles per hour",
+                  "nl": "mph - mijl per uur"
+                }
+              },
+              {
+                "id": "rad",
+                "label": {
+                  "en": "rad - radian",
+                  "nl": "rad - radialen"
+                }
+              },
+              {
+                "id": "deg",
+                "label": {
+                  "en": "deg - degree",
+                  "nl": "deg - graden"
+                }
+              },
+              {
+                "id": "W",
+                "label": {
+                  "en": "W - watt",
+                  "nl": "W - watt"
+                }
+              },
+              {
+                "id": "kW",
+                "label": {
+                  "en": "kW - kilowatt",
+                  "nl": "kW - kilowatt"
+                }
+              },
+              {
+                "id": "Wh",
+                "label": {
+                  "en": "Wh - watt hour",
+                  "nl": "Wh - wattuur"
+                }
+              },
+              {
+                "id": "kWh",
+                "label": {
+                  "en": "kWh - kilowatt hour",
+                  "nl": "kWh - kilowattuur"
+                }
+              },
+              {
+                "id": "Pa",
+                "label": {
+                  "en": "Pa - pascal",
+                  "nl": "Pa - pascal"
+                }
+              },
+              {
+                "id": "bar",
+                "label": {
+                  "en": "bar - bar",
+                  "nl": "bar - bar"
+                }
+              }
+            ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "to_unit",
+            "title": {
+              "en": "To unit",
+              "nl": "Naar eenheid"
+            },
+            "placeholder": {
+              "en": "Pick a compatible unit",
+              "nl": "Kies een compatibele eenheid"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "convert_unit_to_variable"
+      },
+      {
+        "title": {
+          "en": "Values | Evaluate expression",
+          "nl": "Waardes | Evalueer expressie"
+        },
+        "titleFormatted": {
+          "en": "Evaluate [[expression]]",
+          "nl": "Evalueer [[expression]]"
+        },
+        "hint": {
+          "en": "Evaluate one expression and expose the numeric result as a value in Advanced Flow.",
+          "nl": "Evalueer een expressie en geef het numerieke resultaat als waarde terug in Advanced Flow."
+        },
+        "highlight": true,
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 3.14
+          }
+        ],
+        "args": [
+          {
+            "type": "text",
+            "name": "expression",
+            "title": {
+              "en": "Expression",
+              "nl": "Expressie"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "evaluate_expression"
+      },
+      {
+        "title": {
+          "en": "Variables | Set number variable with expression",
+          "nl": "Variabelen | Stel getalvariabele in met expressie"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "Set [[variable]] to [[expression]]",
+          "nl": "Stel [[variable]] in op [[expression]]"
+        },
+        "hint": {
+          "en": "Use one expression to calculate the final number for a variable. You can use functions like round() and the current value through current.",
+          "nl": "Gebruik een expressie om de eindwaarde van een variabele te berekenen. Je kunt functies zoals round() en de huidige waarde via current gebruiken."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          },
+          {
+            "type": "text",
+            "name": "expression",
+            "title": {
+              "en": "Expression",
+              "nl": "Expressie"
+            },
+            "placeholder": {
+              "en": "round((current + 5) / 2, 1)",
+              "nl": "round((current + 5) / 2, 1)"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "evaluate_expression_to_variable"
+      },
+      {
+        "title": {
+          "en": "Apply a math function to a variable",
+          "nl": "Pas een wiskundige functie toe op een variabele"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "Apply [[function]]([[a]], [[b]], [[c]], [[d]], [[e]]) to [[variable]]",
+          "nl": "Pas [[function]]([[a]], [[b]], [[c]], [[d]], [[e]]) toe op [[variable]]"
+        },
+        "hint": {
+          "en": "Apply a math function like round, sqrt, clamp, or random and store the result.",
+          "nl": "Pas een wiskundige functie toe zoals round, sqrt, clamp of random en sla het resultaat op."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "function",
+            "title": {
+              "en": "Function",
+              "nl": "Functie"
+            },
+            "values": [
+              {
+                "id": "abs",
+                "label": {
+                  "en": "abs",
+                  "nl": "abs"
+                }
+              },
+              {
+                "id": "round",
+                "label": {
+                  "en": "round",
+                  "nl": "round"
+                }
+              },
+              {
+                "id": "floor",
+                "label": {
+                  "en": "floor",
+                  "nl": "floor"
+                }
+              },
+              {
+                "id": "ceil",
+                "label": {
+                  "en": "ceil",
+                  "nl": "ceil"
+                }
+              },
+              {
+                "id": "sqrt",
+                "label": {
+                  "en": "sqrt",
+                  "nl": "sqrt"
+                }
+              },
+              {
+                "id": "sin",
+                "label": {
+                  "en": "sin",
+                  "nl": "sin"
+                }
+              },
+              {
+                "id": "cos",
+                "label": {
+                  "en": "cos",
+                  "nl": "cos"
+                }
+              },
+              {
+                "id": "tan",
+                "label": {
+                  "en": "tan",
+                  "nl": "tan"
+                }
+              },
+              {
+                "id": "asin",
+                "label": {
+                  "en": "asin",
+                  "nl": "asin"
+                }
+              },
+              {
+                "id": "acos",
+                "label": {
+                  "en": "acos",
+                  "nl": "acos"
+                }
+              },
+              {
+                "id": "atan",
+                "label": {
+                  "en": "atan",
+                  "nl": "atan"
+                }
+              },
+              {
+                "id": "exp",
+                "label": {
+                  "en": "exp",
+                  "nl": "exp"
+                }
+              },
+              {
+                "id": "log",
+                "label": {
+                  "en": "log",
+                  "nl": "log"
+                }
+              },
+              {
+                "id": "log10",
+                "label": {
+                  "en": "log10",
+                  "nl": "log10"
+                }
+              },
+              {
+                "id": "min",
+                "label": {
+                  "en": "min",
+                  "nl": "min"
+                }
+              },
+              {
+                "id": "max",
+                "label": {
+                  "en": "max",
+                  "nl": "max"
+                }
+              },
+              {
+                "id": "clamp",
+                "label": {
+                  "en": "clamp",
+                  "nl": "clamp"
+                }
+              },
+              {
+                "id": "average",
+                "label": {
+                  "en": "average",
+                  "nl": "average"
+                }
+              },
+              {
+                "id": "percentage",
+                "label": {
+                  "en": "percentage",
+                  "nl": "percentage"
+                }
+              },
+              {
+                "id": "random",
+                "label": {
+                  "en": "random",
+                  "nl": "random"
+                }
+              },
+              {
+                "id": "randomInt",
+                "label": {
+                  "en": "randomInt",
+                  "nl": "randomInt"
+                }
+              },
+              {
+                "id": "mapRange",
+                "label": {
+                  "en": "mapRange",
+                  "nl": "mapRange"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "a",
+            "title": {
+              "en": "A",
+              "nl": "A"
+            }
+          },
+          {
+            "type": "text",
+            "name": "b",
+            "title": {
+              "en": "B",
+              "nl": "B"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "c",
+            "title": {
+              "en": "C",
+              "nl": "C"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "d",
+            "title": {
+              "en": "D",
+              "nl": "D"
+            },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "e",
+            "title": {
+              "en": "E",
+              "nl": "E"
+            },
+            "required": false
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "function_to_variable"
+      },
+      {
+        "title": {
+          "en": "Values | Get number variable",
+          "nl": "Waardes | Haal getalvariabele op"
+        },
+        "titleFormatted": {
+          "en": "Get value from [[variable]]",
+          "nl": "Haal waarde op uit [[variable]]"
+        },
+        "hint": {
+          "en": "Select a Homey Logic number variable and expose its current value in Advanced Flow.",
+          "nl": "Selecteer een Homey Logic-getalvariabele en geef de huidige waarde terug in Advanced Flow."
+        },
+        "highlight": true,
+        "tokens": [
+          {
+            "name": "result",
+            "type": "number",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "get_variable_value"
+      },
+      {
+        "title": {
+          "en": "Variables | Update number variable",
+          "nl": "Variabelen | Werk getalvariabele bij"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "Update [[variable]] with [[operator]] [[value]]",
+          "nl": "Werk [[variable]] bij met [[operator]] [[value]]"
+        },
+        "hint": {
+          "en": "Quickly update an existing Homey Logic number variable with one operator and one value.",
+          "nl": "Werk snel een bestaande Homey Logic-getalvariabele bij met een operator en een waarde."
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "variable",
+            "title": {
+              "en": "Variable",
+              "nl": "Variabele"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "operator",
+            "title": {
+              "en": "Operator",
+              "nl": "Operator"
+            },
+            "values": [
+              {
+                "id": "set",
+                "label": {
+                  "en": "= Set",
+                  "nl": "= Instellen"
+                }
+              },
+              {
+                "id": "add",
+                "label": {
+                  "en": "+ Add",
+                  "nl": "+ Optellen"
+                }
+              },
+              {
+                "id": "subtract",
+                "label": {
+                  "en": "- Subtract",
+                  "nl": "- Aftrekken"
+                }
+              },
+              {
+                "id": "multiply",
+                "label": {
+                  "en": "* Multiply",
+                  "nl": "* Vermenigvuldigen"
+                }
+              },
+              {
+                "id": "divide",
+                "label": {
+                  "en": "/ Divide",
+                  "nl": "/ Delen"
+                }
+              },
+              {
+                "id": "modulo",
+                "label": {
+                  "en": "% Modulo",
+                  "nl": "% Modulo"
+                }
+              },
+              {
+                "id": "power",
+                "label": {
+                  "en": "^ Power",
+                  "nl": "^ Macht"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "Value or expression",
+              "nl": "Waarde of expressie"
+            },
+            "placeholder": {
+              "en": "5, 2.5, current / 2",
+              "nl": "5, 2.5, current / 2"
+            }
+          }
+        ],
+        "icon": "/assets/flow/math.svg",
+        "id": "modify_variable"
+      }
+    ]
+  }
+}

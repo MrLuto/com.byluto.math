@@ -1,0 +1,97 @@
+{
+  "title": {
+    "en": "Values | Calculate",
+    "nl": "Waardes | Bereken"
+  },
+  "titleFormatted": {
+    "en": "Calculate [[left]] [[operator]] [[right]]",
+    "nl": "Bereken [[left]] [[operator]] [[right]]"
+  },
+  "hint": {
+    "en": "Calculate a numeric result from two input values and expose it as a value in Advanced Flow.",
+    "nl": "Bereken een numeriek resultaat uit twee invoerwaardes en geef het als waarde terug in Advanced Flow."
+  },
+  "highlight": true,
+  "tokens": [
+    {
+      "name": "result",
+      "type": "number",
+      "title": {
+        "en": "Result",
+        "nl": "Resultaat"
+      },
+      "example": 12
+    }
+  ],
+  "args": [
+    {
+      "type": "text",
+      "name": "left",
+      "title": {
+        "en": "First value",
+        "nl": "Eerste waarde"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "operator",
+      "title": {
+        "en": "Operator",
+        "nl": "Operator"
+      },
+      "values": [
+        {
+          "id": "add",
+          "label": {
+            "en": "+ Add",
+            "nl": "+ Optellen"
+          }
+        },
+        {
+          "id": "subtract",
+          "label": {
+            "en": "- Subtract",
+            "nl": "- Aftrekken"
+          }
+        },
+        {
+          "id": "multiply",
+          "label": {
+            "en": "* Multiply",
+            "nl": "* Vermenigvuldigen"
+          }
+        },
+        {
+          "id": "divide",
+          "label": {
+            "en": "/ Divide",
+            "nl": "/ Delen"
+          }
+        },
+        {
+          "id": "modulo",
+          "label": {
+            "en": "% Modulo",
+            "nl": "% Modulo"
+          }
+        },
+        {
+          "id": "power",
+          "label": {
+            "en": "^ Power",
+            "nl": "^ Macht"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "right",
+      "title": {
+        "en": "Second value",
+        "nl": "Tweede waarde"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

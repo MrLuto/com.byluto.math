@@ -1,0 +1,98 @@
+{
+  "title": {
+    "en": "Variables | Update number variable",
+    "nl": "Variabelen | Werk getalvariabele bij"
+  },
+  "deprecated": true,
+  "titleFormatted": {
+    "en": "Update [[variable]] with [[operator]] [[value]]",
+    "nl": "Werk [[variable]] bij met [[operator]] [[value]]"
+  },
+  "hint": {
+    "en": "Quickly update an existing Homey Logic number variable with one operator and one value.",
+    "nl": "Werk snel een bestaande Homey Logic-getalvariabele bij met een operator en een waarde."
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "operator",
+      "title": {
+        "en": "Operator",
+        "nl": "Operator"
+      },
+      "values": [
+        {
+          "id": "set",
+          "label": {
+            "en": "= Set",
+            "nl": "= Instellen"
+          }
+        },
+        {
+          "id": "add",
+          "label": {
+            "en": "+ Add",
+            "nl": "+ Optellen"
+          }
+        },
+        {
+          "id": "subtract",
+          "label": {
+            "en": "- Subtract",
+            "nl": "- Aftrekken"
+          }
+        },
+        {
+          "id": "multiply",
+          "label": {
+            "en": "* Multiply",
+            "nl": "* Vermenigvuldigen"
+          }
+        },
+        {
+          "id": "divide",
+          "label": {
+            "en": "/ Divide",
+            "nl": "/ Delen"
+          }
+        },
+        {
+          "id": "modulo",
+          "label": {
+            "en": "% Modulo",
+            "nl": "% Modulo"
+          }
+        },
+        {
+          "id": "power",
+          "label": {
+            "en": "^ Power",
+            "nl": "^ Macht"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value or expression",
+        "nl": "Waarde of expressie"
+      },
+      "placeholder": {
+        "en": "5, 2.5, current / 2",
+        "nl": "5, 2.5, current / 2"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

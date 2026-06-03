@@ -1,0 +1,234 @@
+{
+  "title": {
+    "en": "Apply a math function to a variable",
+    "nl": "Pas een wiskundige functie toe op een variabele"
+  },
+  "deprecated": true,
+  "titleFormatted": {
+    "en": "Apply [[function]]([[a]], [[b]], [[c]], [[d]], [[e]]) to [[variable]]",
+    "nl": "Pas [[function]]([[a]], [[b]], [[c]], [[d]], [[e]]) toe op [[variable]]"
+  },
+  "hint": {
+    "en": "Apply a math function like round, sqrt, clamp, or random and store the result.",
+    "nl": "Pas een wiskundige functie toe zoals round, sqrt, clamp of random en sla het resultaat op."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "function",
+      "title": {
+        "en": "Function",
+        "nl": "Functie"
+      },
+      "values": [
+        {
+          "id": "abs",
+          "label": {
+            "en": "abs",
+            "nl": "abs"
+          }
+        },
+        {
+          "id": "round",
+          "label": {
+            "en": "round",
+            "nl": "round"
+          }
+        },
+        {
+          "id": "floor",
+          "label": {
+            "en": "floor",
+            "nl": "floor"
+          }
+        },
+        {
+          "id": "ceil",
+          "label": {
+            "en": "ceil",
+            "nl": "ceil"
+          }
+        },
+        {
+          "id": "sqrt",
+          "label": {
+            "en": "sqrt",
+            "nl": "sqrt"
+          }
+        },
+        {
+          "id": "sin",
+          "label": {
+            "en": "sin",
+            "nl": "sin"
+          }
+        },
+        {
+          "id": "cos",
+          "label": {
+            "en": "cos",
+            "nl": "cos"
+          }
+        },
+        {
+          "id": "tan",
+          "label": {
+            "en": "tan",
+            "nl": "tan"
+          }
+        },
+        {
+          "id": "asin",
+          "label": {
+            "en": "asin",
+            "nl": "asin"
+          }
+        },
+        {
+          "id": "acos",
+          "label": {
+            "en": "acos",
+            "nl": "acos"
+          }
+        },
+        {
+          "id": "atan",
+          "label": {
+            "en": "atan",
+            "nl": "atan"
+          }
+        },
+        {
+          "id": "exp",
+          "label": {
+            "en": "exp",
+            "nl": "exp"
+          }
+        },
+        {
+          "id": "log",
+          "label": {
+            "en": "log",
+            "nl": "log"
+          }
+        },
+        {
+          "id": "log10",
+          "label": {
+            "en": "log10",
+            "nl": "log10"
+          }
+        },
+        {
+          "id": "min",
+          "label": {
+            "en": "min",
+            "nl": "min"
+          }
+        },
+        {
+          "id": "max",
+          "label": {
+            "en": "max",
+            "nl": "max"
+          }
+        },
+        {
+          "id": "clamp",
+          "label": {
+            "en": "clamp",
+            "nl": "clamp"
+          }
+        },
+        {
+          "id": "average",
+          "label": {
+            "en": "average",
+            "nl": "average"
+          }
+        },
+        {
+          "id": "percentage",
+          "label": {
+            "en": "percentage",
+            "nl": "percentage"
+          }
+        },
+        {
+          "id": "random",
+          "label": {
+            "en": "random",
+            "nl": "random"
+          }
+        },
+        {
+          "id": "randomInt",
+          "label": {
+            "en": "randomInt",
+            "nl": "randomInt"
+          }
+        },
+        {
+          "id": "mapRange",
+          "label": {
+            "en": "mapRange",
+            "nl": "mapRange"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "a",
+      "title": {
+        "en": "A",
+        "nl": "A"
+      }
+    },
+    {
+      "type": "text",
+      "name": "b",
+      "title": {
+        "en": "B",
+        "nl": "B"
+      },
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "c",
+      "title": {
+        "en": "C",
+        "nl": "C"
+      },
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "d",
+      "title": {
+        "en": "D",
+        "nl": "D"
+      },
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "e",
+      "title": {
+        "en": "E",
+        "nl": "E"
+      },
+      "required": false
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "Values | Get number variable",
+    "nl": "Waardes | Haal getalvariabele op"
+  },
+  "titleFormatted": {
+    "en": "Get value from [[variable]]",
+    "nl": "Haal waarde op uit [[variable]]"
+  },
+  "hint": {
+    "en": "Select a Homey Logic number variable and expose its current value in Advanced Flow.",
+    "nl": "Selecteer een Homey Logic-getalvariabele en geef de huidige waarde terug in Advanced Flow."
+  },
+  "highlight": true,
+  "tokens": [
+    {
+      "name": "result",
+      "type": "number",
+      "title": {
+        "en": "Result",
+        "nl": "Resultaat"
+      },
+      "example": 21
+    }
+  ],
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

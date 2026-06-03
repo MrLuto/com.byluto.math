@@ -1,0 +1,21 @@
+{
+  "title": {
+    "en": "Logic | The expression is !{{true|false}}",
+    "nl": "Logica | De expressie is !{{waar|onwaar}}"
+  },
+  "titleFormatted": {
+    "en": "[[expression]] is !{{true|false}}",
+    "nl": "[[expression]] is !{{waar|onwaar}}"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "expression",
+      "title": {
+        "en": "Expression",
+        "nl": "Expressie"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

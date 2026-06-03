@@ -1,0 +1,39 @@
+{
+  "id": "com.byluto.math",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Math",
+    "nl": "Math"
+  },
+  "description": {
+    "en": "Calculate, compare, convert units, and update Homey Logic variables from Flows.",
+    "nl": "Reken, vergelijk, converteer eenheden en werk Homey Logic-variabelen bij vanuit Flows."
+  },
+  "changelog": {
+    "en": "Initial release with math flow cards and developer debug logging.",
+    "nl": "Eerste release met reken-flowkaarten en ontwikkelaarsdebuglogging."
+  },
+  "category": [
+    "tools"
+  ],
+  "brandColor": "#0E7490",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "author": {
+    "name": "ByLuto",
+    "email": "development@byluto.nl"
+  },
+  "support": "mailto:development@byluto.nl"
+}

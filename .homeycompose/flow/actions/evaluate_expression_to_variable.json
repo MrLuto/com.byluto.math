@@ -1,0 +1,38 @@
+{
+  "title": {
+    "en": "Variables | Set number variable with expression",
+    "nl": "Variabelen | Stel getalvariabele in met expressie"
+  },
+  "deprecated": true,
+  "titleFormatted": {
+    "en": "Set [[variable]] to [[expression]]",
+    "nl": "Stel [[variable]] in op [[expression]]"
+  },
+  "hint": {
+    "en": "Use one expression to calculate the final number for a variable. You can use functions like round() and the current value through current.",
+    "nl": "Gebruik een expressie om de eindwaarde van een variabele te berekenen. Je kunt functies zoals round() en de huidige waarde via current gebruiken."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "variable",
+      "title": {
+        "en": "Variable",
+        "nl": "Variabele"
+      }
+    },
+    {
+      "type": "text",
+      "name": "expression",
+      "title": {
+        "en": "Expression",
+        "nl": "Expressie"
+      },
+      "placeholder": {
+        "en": "round((current + 5) / 2, 1)",
+        "nl": "round((current + 5) / 2, 1)"
+      }
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}

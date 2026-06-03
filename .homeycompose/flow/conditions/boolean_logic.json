@@ -1,0 +1,68 @@
+{
+  "title": {
+    "en": "Logic | Boolean logic is !{{true|false}}",
+    "nl": "Logica | Booleaanse logica is !{{waar|onwaar}}"
+  },
+  "titleFormatted": {
+    "en": "[[left]] [[operator]] [[right]] is !{{true|false}}",
+    "nl": "[[left]] [[operator]] [[right]] is !{{waar|onwaar}}"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "left",
+      "title": {
+        "en": "First boolean",
+        "nl": "Eerste boolean"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "operator",
+      "title": {
+        "en": "Operator",
+        "nl": "Operator"
+      },
+      "values": [
+        {
+          "id": "and",
+          "label": {
+            "en": "AND - Both true",
+            "nl": "AND - Beide waar"
+          }
+        },
+        {
+          "id": "or",
+          "label": {
+            "en": "OR - One is true",
+            "nl": "OR - Een is waar"
+          }
+        },
+        {
+          "id": "xor",
+          "label": {
+            "en": "XOR - Only one true",
+            "nl": "XOR - Slechts een waar"
+          }
+        },
+        {
+          "id": "not",
+          "label": {
+            "en": "NOT - Invert",
+            "nl": "NOT - Omdraaien"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "right",
+      "title": {
+        "en": "Second boolean",
+        "nl": "Tweede boolean"
+      },
+      "required": false
+    }
+  ],
+  "icon": "/assets/flow/math.svg"
+}
